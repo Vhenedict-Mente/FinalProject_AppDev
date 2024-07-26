@@ -32,6 +32,16 @@ Ensure you have the following installed:
 * Fimga UI design presentation: https://youtu.be/EqZqnbmbqhY?si=kLRrqA4mhoqnws4F
 
 ## GUI
+![login](https://github.com/user-attachments/assets/d4f19e6c-b8de-45e1-b8c3-d0955f446f9a)
+![homepage](https://github.com/user-attachments/assets/4632f1e1-5ffa-43e5-9baf-823bb9c400be)
+![navigation](https://github.com/user-attachments/assets/d320a75a-5020-4e5a-ae78-47ecea084caf)
+![sensor](https://github.com/user-attachments/assets/27fad5fc-1cfa-4ddc-896a-b2e4dada2d2d)
+![surveillance](https://github.com/user-attachments/assets/e4edf7da-ca69-463c-8eb5-d54f3153e903)
+![feeder](https://github.com/user-attachments/assets/6f8cf268-44bb-47c3-a3cc-b38615cc9408)
+![production](https://github.com/user-attachments/assets/f9b6dd40-345d-4a45-b219-bc733c5031e2)
+![supply](https://github.com/user-attachments/assets/9b0acdd3-7cb1-4397-9fcb-407ceebb9599)
+![notification](https://github.com/user-attachments/assets/df5f57e8-a312-4b29-af75-52bbba37c9f9)
+![User](https://github.com/user-attachments/assets/9a8d5e40-62b1-4525-939f-3a003d0bd1a2)
 
 
 
