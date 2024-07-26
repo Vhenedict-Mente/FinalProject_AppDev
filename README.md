@@ -17,7 +17,7 @@ By Providing real-time data and automated controls, Ecoguard ensures optimal con
 * **Alerts and Notifications:** Receive real-time alerts and notifications for critical issues such as equipment failures, abnormal environmental conditions, or health concerns.
 * **Remote Access:** Allow farm managers to monitor and control operations remotely, providing flexibility and convenience.
 
-* **Ecoguard serves as the final project for Application Development, showcasing advanced features and user-friendly interfaces that facilitate effective poultry farm management.
+**Ecoguard serves as the final project for Application Development, showcasing advanced features and user-friendly interfaces that facilitate effective poultry farm management.
    Through this project, the application demonstrates the integration of modern technology in agricultural practices, contributing to the sustainability and profitability of poultry farming.**
 
 ## Environment Configurations
