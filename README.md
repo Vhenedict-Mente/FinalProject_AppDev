@@ -13,7 +13,7 @@ By Providing real-time data and automated controls, Ecoguard ensures optimal con
 ## Features
 * **Real-time Environment Monitoring:** Track environmental conditions such as temperature, humidity, and air quality to ensure optimal living conditions for poultry.
 * **Health Monitoring:** Monitor the health status of poultry in real time to detect and address any health issues promptly.
-* **Automated Feeding:** Control automated feeders to maintain consistent and adequate feed supply.
+* **Feeders Control:** Controlling feeders to maintain consistent and adequate feed supply.
 * **Alerts and Notifications:** Receive real-time alerts and notifications for critical issues such as equipment failures, abnormal environmental conditions, or health concerns.
 * **Remote Access:** Allow farm managers to monitor and control operations remotely, providing flexibility and convenience.
 
