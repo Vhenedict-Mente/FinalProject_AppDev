@@ -28,8 +28,8 @@ Ensure you have the following installed:
 * Any version of Android Emulator
 * Git
 
-## YouTube Link
-* Fimga UI design presentation: https://youtu.be/EqZqnbmbqhY?si=kLRrqA4mhoqnws4F
+## YouTube Link (Final Presentation)
+https://youtu.be/7m6465ZHm44?si=_SdIj6veAECkTp3c 
 
 ## GUI
 ![login](https://github.com/user-attachments/assets/d4f19e6c-b8de-45e1-b8c3-d0955f446f9a)
