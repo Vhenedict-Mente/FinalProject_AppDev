@@ -32,7 +32,7 @@ Ensure you have the following installed:
 * Fimga UI design presentation: https://youtu.be/EqZqnbmbqhY?si=kLRrqA4mhoqnws4F
 
 ## GUI
-![image](https://github.com/user-attachments/assets/6f802d3c-5a76-4403-99ee-f692ff886dcd)
+
 
 
 
