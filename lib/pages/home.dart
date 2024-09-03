@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:ecoguard/pages/sensor.dart';
-import 'package:ecoguard/pages/production.dart';
+import 'package:ecoguard/pages/supply.dart';
 import 'package:ecoguard/pages/feeder.dart';
 import 'package:ecoguard/pages/supply.dart';
 import 'package:ecoguard/pages/surveillance.dart';

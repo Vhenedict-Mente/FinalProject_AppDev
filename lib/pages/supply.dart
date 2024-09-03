@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 import 'package:ecoguard/pages/home.dart';
 import 'package:ecoguard/pages/sensor.dart';
 import 'package:ecoguard/pages/feeder.dart';
@@ -44,18 +43,18 @@ class SupplyPage extends StatelessWidget {
         ],
       ),
       drawer: Drawer(
-        backgroundColor: const Color(0xFFF8F96F),
+        backgroundColor: Color.fromARGB(248, 252, 249, 111),
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Color(0xFFF8F96F),
+                color: Color.fromARGB(248, 252, 249, 111),
               ),
               child: Text(
                 'ECOGUARD',
                 style: TextStyle(
-                    color: Color(0xFF377A26),
+                    color: Color.fromARGB(255, 55, 122, 38),
                     fontSize: 40,
                     fontWeight: FontWeight.bold),
               ),
@@ -125,50 +124,10 @@ class SupplyPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          children: <Widget>[
+          children: [
             _inputSection(),
-            SizedBox(height: 16.0),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFF9FAF8),
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: Color(0xFF141414),
-                  ),
-                ),
-                child: SingleChildScrollView(
-                  child: DataTable(
-                    columns: [
-                      DataColumn(label: Text('Date')),
-                      DataColumn(label: Text('No. of Eggs')),
-                      DataColumn(label: Text('Action')),
-                    ],
-                    rows: List<DataRow>.generate(
-                      10,
-                      (index) => DataRow(
-                        cells: [
-                          DataCell(Text('2024-07-24')),
-                          DataCell(Text('100')),
-                          DataCell(Row(
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.edit),
-                                onPressed: () {},
-                              ),
-                              IconButton(
-                                icon: Icon(Icons.delete),
-                                onPressed: () {},
-                              ),
-                            ],
-                          )),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            SizedBox(height: 20),
+            _dataSection(),
           ],
         ),
       ),
@@ -180,7 +139,7 @@ class SupplyPage extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 253, 253, 253),
+        color: Color.fromARGB(255, 245, 244, 244),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: Color.fromARGB(248, 20, 20, 20),
@@ -193,7 +152,7 @@ class SupplyPage extends StatelessWidget {
               Expanded(
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: 'Date:',
+                    labelText: 'Feed Type:',
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -202,7 +161,7 @@ class SupplyPage extends StatelessWidget {
               Expanded(
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: 'No. of Eggs:',
+                    labelText: 'Quantity (Kg):',
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -211,11 +170,96 @@ class SupplyPage extends StatelessWidget {
           ),
           SizedBox(height: 10),
           ElevatedButton(
-            onPressed: () {},
-            child: Text('Save'),
-            style: ElevatedButton.styleFrom(),
+            onPressed: () {
+              // Add your logic to handle the button press event
+            },
+            child: Text('Submit Feed Data'),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _dataSection() {
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 249, 250, 248),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: Color.fromARGB(248, 20, 20, 20),
+          ),
+        ),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(16.0),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Feed Data',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Divider(color: Color.fromARGB(255, 215, 216, 210)),
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  columns: [
+                    DataColumn(label: Text('Feed Type')),
+                    DataColumn(label: Text('Quantity (Kg)')),
+                    DataColumn(label: Text('Timestamp')),
+                    DataColumn(label: Text('Action')),
+                  ],
+                  rows: [
+                    DataRow(cells: [
+                      DataCell(Text('Type 1')),
+                      DataCell(Text('100')),
+                      DataCell(Text('2024-07-24 10:30')),
+                      DataCell(Row(
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.edit),
+                            onPressed: () {
+                              // Handle edit action
+                            },
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.delete),
+                            onPressed: () {
+                              // Handle delete action
+                            },
+                          ),
+                        ],
+                      )),
+                    ]),
+                    DataRow(cells: [
+                      DataCell(Text('Type 2')),
+                      DataCell(Text('50')),
+                      DataCell(Text('2024-07-24 11:00')),
+                      DataCell(Row(
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.edit),
+                            onPressed: () {
+                              // Handle edit action
+                            },
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.delete),
+                            onPressed: () {
+                              // Handle delete action
+                            },
+                          ),
+                        ],
+                      )),
+                    ]),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
