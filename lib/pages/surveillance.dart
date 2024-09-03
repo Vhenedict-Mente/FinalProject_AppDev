@@ -4,7 +4,7 @@ import 'package:ecoguard/pages/home.dart';
 import 'package:ecoguard/pages/sensor.dart';
 import 'package:ecoguard/pages/feeder.dart';
 import 'package:ecoguard/pages/supply.dart';
-import 'package:ecoguard/pages/supply.dart';
+import 'package:ecoguard/pages/production.dart';
 import 'package:flutter/material.dart';
 import 'notification.dart';
 import 'profile.dart';
