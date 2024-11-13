@@ -1,23 +1,51 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:ecoguard/pages/home.dart';
 import 'package:ecoguard/pages/sensor.dart';
-import 'package:ecoguard/pages/supply.dart';
-import 'package:ecoguard/pages/production.dart';
 import 'package:ecoguard/pages/surveillance.dart';
-import 'package:flutter/material.dart';
+import 'package:ecoguard/pages/production.dart';
+import 'package:ecoguard/pages/track_record.dart';
 import 'notification.dart';
 import 'profile.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-class FeederPage extends StatelessWidget {
-  const FeederPage({super.key});
+class FeederPage extends StatefulWidget {
+  @override
+  _FeederPageState createState() => _FeederPageState();
+}
+
+class _FeederPageState extends State<FeederPage> {
+  bool fanStatus = false;
+
+  // Function to control the fan relay
+  Future<void> toggleFan() async {
+    // Replace with your ESP-01 IP address
+    String espIp = 'http://192.168.1.42'; // Update to your ESP IP address
+    String command = fanStatus ? 'OFF' : 'ON';
+    String url = '$espIp/$command'; // Appends /ON or /OFF to the ESP URL
+
+    try {
+      var response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        setState(() {
+          fanStatus = !fanStatus; // Toggle the fan status
+        });
+        print('Success: Fan turned ${command}');
+      } else {
+        print('Failed to send command. Status Code: ${response.statusCode}');
+      }
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Feeders',
+          'Feeders & Fan Control',
           style: TextStyle(
             color: Colors.black,
             fontSize: 25,
@@ -66,7 +94,7 @@ class FeederPage extends StatelessWidget {
               text: 'HomePage',
               onTap: () {
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => const HomePage()));
+                    MaterialPageRoute(builder: (context) => HomePage()));
               },
               fontWeight: FontWeight.bold,
             ),
@@ -111,12 +139,12 @@ class FeederPage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             _createDrawerItem(
-              icon: Icons.local_shipping,
-              text: 'Supply',
+              icon: Icons.assessment,
+              text: 'Track Record',
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => SupplyPage()));
+                    MaterialPageRoute(builder: (context) => TrackRecordPage()));
               },
               fontWeight: FontWeight.bold,
             ),
@@ -127,6 +155,8 @@ class FeederPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            _fanControlWidget(),
+            SizedBox(height: 20),
             _feederWidget('Feeder 1 status:', '100%', true),
             SizedBox(height: 20),
             _feederWidget('Feeder 2 status:', '50%', false),
@@ -136,6 +166,45 @@ class FeederPage extends StatelessWidget {
         ),
       ),
       backgroundColor: Color.fromARGB(248, 236, 236, 236),
+    );
+  }
+
+  Widget _fanControlWidget() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color.fromARGB(248, 252, 249, 111),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: Colors.grey,
+        ),
+      ),
+      padding: EdgeInsets.all(16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Fan Status:',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          Switch(
+            value: fanStatus,
+            onChanged: (value) {
+              toggleFan();
+            },
+            activeColor: Colors.green,
+            inactiveThumbColor: Colors.red,
+            inactiveTrackColor: Colors.red[200],
+          ),
+          Text(
+            fanStatus ? 'ON' : 'OFF',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: fanStatus ? Colors.green : Colors.red,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -180,7 +249,7 @@ class FeederPage extends StatelessWidget {
               ),
             ],
           ),
-          Column(
+           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
