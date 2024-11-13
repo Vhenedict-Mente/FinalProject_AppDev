@@ -131,10 +131,10 @@ class SurveillancePage extends StatelessWidget {
           child: Column(
             children: [
               _cameraWidget(context, 'Camera 1', 'Growing House',
-                  'http://192.168.1.17:5000/video_feed_1'), // Web URL for Camera 1
+                  'https://finalproject-appdev.onrender.com/video_feed_1'), // Web URL for Camera 1
               SizedBox(height: 20),
               _cameraWidget(context, 'Camera 2', 'Chicken Pen',
-                  'http://192.168.1.17:5000/video_feed_2'), // Web URL for Camera 2
+                  'https://finalproject-appdev.onrender.com/video_feed_2'), // Web URL for Camera 2
             ],
           ),
         ),
